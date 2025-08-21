@@ -92,6 +92,26 @@ RUN apt-get update && apt-get install -y \
     bat \
     && rm -rf /var/lib/apt/lists/*
 
+# Install network tools
+RUN apt-get update && apt-get install -y \
+    netcat-openbsd \
+    nmap \
+    tcpdump \
+    iftop \
+    whois \
+    traceroute \
+    mtr \
+    iperf3 \
+    socat \
+    telnet \
+    ftp \
+    net-tools \
+    iproute2 \
+    dnsutils \
+    iputils-ping \
+    tshark \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install comby dependencies and binary
 RUN apt-get update && apt-get install -y libev4 libgmp10 libpcre3 && rm -rf /var/lib/apt/lists/* && \
     curl -L https://github.com/comby-tools/comby/releases/download/1.8.1/comby-1.8.1-x86_64-linux.tar.gz -o /tmp/comby.tar.gz && \
