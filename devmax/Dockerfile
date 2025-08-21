@@ -112,6 +112,22 @@ RUN apt-get update && apt-get install -y \
     tshark \
     && rm -rf /var/lib/apt/lists/*
 
+# Install git tools and utilities
+RUN apt-get update && apt-get install -y \
+    git-flow \
+    git-lfs \
+    tig \
+    gh \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install encoding/hashing tools
+RUN apt-get update && apt-get install -y \
+    xxd \
+    openssl \
+    gnupg \
+    sharutils \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install comby dependencies and binary
 RUN apt-get update && apt-get install -y libev4 libgmp10 libpcre3 && rm -rf /var/lib/apt/lists/* && \
     curl -L https://github.com/comby-tools/comby/releases/download/1.8.1/comby-1.8.1-x86_64-linux.tar.gz -o /tmp/comby.tar.gz && \
