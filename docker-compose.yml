@@ -4,6 +4,7 @@ services:
   dev-environment:
     build:
       context: ./devmax
+      dockerfile: Dockerfile.optimized
       args:
         DEV_USERNAME: ${DEV_USERNAME:-dev}
         DEV_PASSWORD: ${DEV_PASSWORD:?DEV_PASSWORD environment variable is required}

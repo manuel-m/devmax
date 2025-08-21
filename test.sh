@@ -45,8 +45,6 @@ test_command "which pip3" "pip3" || ((failed_tests++))
 # Test Node.js
 test_command "node --version" "Node.js" || ((failed_tests++))
 test_command "npm --version" "npm" || ((failed_tests++))
-test_command "which yarn" "yarn" || ((failed_tests++))
-test_command "which pnpm" "pnpm" || ((failed_tests++))
 test_command "tsc -v" "TypeScript" || ((failed_tests++))
 
 # Test Java
@@ -57,13 +55,8 @@ test_command "mvn -version" "Maven" || ((failed_tests++))
 # Test Go
 test_command "go version" "Go" || ((failed_tests++))
 
-# Test Rust
-test_command "rustc --version" "Rust compiler" || ((failed_tests++))
-test_command "cargo --version" "Cargo" || ((failed_tests++))
-
 # Test Python tools
 test_command "black --version" "Black formatter" || ((failed_tests++))
-test_command "flake8 --version" "Flake8" || ((failed_tests++))
 test_command "pytest --version" "pytest" || ((failed_tests++))
 
 # Test additional tools
